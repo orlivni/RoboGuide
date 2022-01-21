@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html><head>
+  <title>  My Robot Project </title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=0.6"> 
+  <style>
+
+    body {
+
+           /*background-image: url('https://static.wixstatic.com/media/a5adb4_4b34ab15f71f43f9b79db9185e77ed68~mv2.png');*/
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           background-position: center;
+           background-size: 100% 100%;
+           font-family: tahoma; font-size: 17px; color: #404040; text-align: center; margin: 200; padding: 200
+
+    }
+
+    tr, form {
+           
+           font-family: tahoma; font-size: 17px; color: #404040; text-align: center; margin: 200; padding: 100}
+
+    pre {font-family: courier, serif, size: 10pt; margin: 0px 8px;}
+    input {font-size: 17px;}
+    .header {background:#eef; border-bottom: 1px solid #ddd; padding: 7px;}
+    .caption {font-size: 20px; color: #d95722; text-align: center; width: 10em;}
+    .caption1 {font-size: 20px; color: #d95722; text-align: center; width: 26em;}
+    .arrow {font-weight: bold; text-decoration: none; color: #3D3D3D; }
+    .arrow:hover {text-decoration: underline;}
+    .command {font-weight: bold; text-decoration: none; color: #AAAAAA; }
+    .command:hover {text-decoration: underline;}
+    .timetable {border-width: 1px; border-style: outset; border-collapse: collapse; border-color: gray; margin: 0 auto;}
+    .timetable td {border-width: 1px; border-spacing: 1px; padding: 10px; border-style: inset; border-color: #CCCCCC;}
+    .timetable tr {background-color: #F8F7F4; color: black;}
+    .head-row {color: black; background-color: #eef;}
+    .today-row {background-color: #F8F7F4; color: black}
+
+
+    input[type=text] {
+     width: 50%;
+     padding: 6px 5px;
+     margin: 2px 0;
+     box-sizing: border-box;
+     border: 2px solid red;
+     border-radius: 4px;
+}
+
+input[type=text1] {
+     width: 50%;
+     padding: 6px 5px;
+     margin: 2px 0;
+     box-sizing: border-box;
+     border: 1px solid blue;
+     border-radius: 0px;
+     text-align: center;
+}
+
+select[type=textt] {
+     width: 65%;
+     padding: 6px 5px;
+     margin: 2px 0;
+     box-sizing: border-box;
+     border: 2px solid blue;
+     border-radius: 4px;
+}
+
+select[type=texttt] {
+     width: 65%;
+     padding: 6px 5px;
+     margin: 2px 0;
+     box-sizing: border-box;
+     border: 2px solid green;
+     border-radius: 4px;
+}
+
+
+
+
+input[type=button], input[type=file] {
+
+  
+  background-color: #4CAF50;
+  border: 1px solid black;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+
+
+input[type=submit] {
+
+  
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+
+
+
+  </style>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script src="libraries/p5.js" type="text/javascript"></script>
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="sketch.js" type="text/javascript"></script>
+    <script src="sketch.js"></script>
+
+
+</head>
+
+<body>
+
+  
+<div>
+  <table class="timetable" align="center">
+   <tbody>
+    
+<H1>
+    Welcome to  My Robot Project
+ </H1>   
+  
+    <tr>
+    <td > Station Number </td>
+    <td>  File to Upload to Server </td>
+     <td > Play Long Movie </td>
+     <td > Play Short  Movie </td>
+
+    </tr>
+    
+    
+    <tr>
+    <td> Station 1 </td>
+    
+    <td>  
+        <form   
+        id='uploadForm1'
+        action='/uploadST1' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile1" accept="video/*" > 
+         <input   type='submit'  value='Upload  Long!' > 
+         </form>
+
+      
+        <form   
+        id='uploadForm11'
+        action='/uploadST11' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile11" accept="video/*" > 
+         <input   type='submit'  value='Upload Short!' > 
+         </form>
+
+     </td>
+
+    
+
+    <td> 
+        
+        <input type="checkbox" id="myCheck1" >
+
+     </td>
+     <td> 
+        
+        <input type="checkbox" id="myCheck11" >
+
+     </td>
+
+    </tr>
+
+        <tr>
+    <td> Station 2 </td>
+    
+    <td>  
+        <form   
+        id='uploadForm2'
+        action='/uploadST2' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile2" accept="video/*" > 
+         <input   type='submit'  value='Upload  Long!' > 
+         </form>
+
+      
+        <form   
+        id='uploadForm22'
+        action='/uploadST22' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile22" accept="video/*" > 
+         <input   type='submit'  value='Upload Short!' > 
+         </form>
+
+     </td>
+
+    
+
+    <td> 
+        
+        <input type="checkbox" id="myCheck2" >
+
+     </td>
+     <td> 
+        
+        <input type="checkbox" id="myCheck22" >
+
+     </td>
+
+    </tr>
+
+        <tr>
+    <td> Station 3 </td>
+    
+    <td>  
+        <form   
+        id='uploadForm3'
+        action='/uploadST3' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile3" accept="video/*" > 
+         <input   type='submit'  value='Upload  Long!' > 
+         </form>
+
+      
+        <form   
+        id='uploadForm33'
+        action='/uploadST33' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile33" accept="video/*" > 
+         <input   type='submit'  value='Upload Short!' > 
+         </form>
+
+     </td>
+
+    
+
+    <td> 
+        
+        <input type="checkbox" id="myCheck3" >
+
+     </td>
+     <td> 
+        
+        <input type="checkbox" id="myCheck33" >
+
+     </td>
+
+    </tr>
+        <tr>
+    <td> Station 4 </td>
+    
+    <td>  
+        <form   
+        id='uploadForm4'
+        action='/uploadST4' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile4" accept="video/*" > 
+         <input   type='submit'  value='Upload  Long!' > 
+         </form>
+
+      
+        <form   
+        id='uploadForm44'
+        action='/uploadST44' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile44" accept="video/*" > 
+         <input   type='submit'  value='Upload Short!' > 
+         </form>
+
+     </td>
+
+    
+
+    <td> 
+        
+        <input type="checkbox" id="myCheck4" >
+
+     </td>
+     <td> 
+        
+        <input type="checkbox" id="myCheck44" >
+
+     </td>
+
+    </tr>
+
+    <tr>
+    <td> Station 5 </td>
+     
+    <td>  
+        <form   
+        id='uploadForm5'
+        action='/uploadST5' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile5" accept="video/*" > 
+         <input   type='submit'  value='Upload  Long!' > 
+         </form>
+
+      
+        <form   
+        id='uploadForm55'
+        action='/uploadST55' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile55" accept="video/*" > 
+         <input   type='submit'  value='Upload Short!' > 
+         </form>
+
+     </td>
+
+    
+
+    <td> 
+        
+        <input type="checkbox" id="myCheck5" >
+
+     </td>
+     <td> 
+        
+        <input type="checkbox" id="myCheck55" >
+
+     </td>
+
+    </tr>
+     
+       <tr>
+    <td> Station 6 </td>
+    
+    <td>  
+        <form   
+        id='uploadForm6'
+        action='/uploadST6' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile6" accept="video/*" > 
+         <input   type='submit'  value='Upload  Long!' > 
+         </form>
+
+      
+        <form   
+        id='uploadForm66'
+        action='/uploadST66' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile66" accept="video/*" > 
+         <input   type='submit'  value='Upload Short!' > 
+         </form>
+
+     </td>
+
+    
+
+    <td> 
+        
+        <input type="checkbox" id="myCheck6" >
+
+     </td>
+     <td> 
+        
+        <input type="checkbox" id="myCheck66" >
+
+     </td>
+
+    </tr>
+
+        <tr>
+    <td> Station 7 </td>
+    
+    <td>  
+        <form   
+        id='uploadForm7'
+        action='/uploadST7' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile7" accept="video/*" > 
+         <input   type='submit'  value='Upload  Long!' > 
+         </form>
+
+      
+        <form   
+        id='uploadForm77'
+        action='/uploadST77' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile77" accept="video/*" > 
+         <input   type='submit'  value='Upload Short!' > 
+         </form>
+
+     </td>
+
+    
+
+    <td> 
+        
+        <input type="checkbox" id="myCheck7" >
+
+     </td>
+     <td> 
+        
+        <input type="checkbox" id="myCheck77" >
+
+     </td>
+
+    </tr>
+
+        <tr>
+    <td> Station 8 </td>
+    
+    <td>  
+        <form   
+        id='uploadForm8'
+        action='/uploadST8' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile8" accept="video/*" > 
+         <input   type='submit'  value='Upload  Long!' > 
+         </form>
+
+      
+        <form   
+        id='uploadForm88'
+        action='/uploadST88' 
+        method='post' 
+        encType="multipart/form-data"> 
+        
+
+         <input                 type="file"   id = "myfile"  name="sampleFile88" accept="video/*" > 
+         <input   type='submit'  value='Upload Short!' > 
+         </form>
+
+     </td>
+
+    
+
+    <td> 
+        
+        <input type="checkbox" id="myCheck8" >
+
+     </td>
+     <td> 
+        
+        <input type="checkbox" id="myCheck88" >
+
+     </td>
+
+    </tr>
+
+
+       
+</tbody>
+</table>
+<br>
+</br>
+
+<input  id="UpDate"  type='button'  value='UpDate Server'  onclick="updateFunction()"/>
+
+</div>
+
+
+<script>
+
+function updateFunction() {
+
+  var checkBox1 = document.getElementById("myCheck1");
+  var checkBox2 = document.getElementById("myCheck2");
+  var checkBox3 = document.getElementById("myCheck3");
+  var checkBox4 = document.getElementById("myCheck4");
+  var checkBox5 = document.getElementById("myCheck5");
+  var checkBox6 = document.getElementById("myCheck6");
+  var checkBox7 = document.getElementById("myCheck7");
+  var checkBox8 = document.getElementById("myCheck8");
+
+  var checkBox11 = document.getElementById("myCheck11");
+  var checkBox22 = document.getElementById("myCheck22");
+  var checkBox33 = document.getElementById("myCheck33");
+  var checkBox44 = document.getElementById("myCheck44");
+  var checkBox55 = document.getElementById("myCheck55");
+  var checkBox66 = document.getElementById("myCheck66");
+  var checkBox77 = document.getElementById("myCheck77");
+  var checkBox88 = document.getElementById("myCheck88");
+
+
+  var data = {
+        
+        Station1: checkBox1.checked,
+        Station2: checkBox2.checked,
+        Station3: checkBox3.checked,
+        Station4: checkBox4.checked,
+        Station5: checkBox5.checked,
+        Station6: checkBox6.checked,
+        Station7: checkBox7.checked,
+        Station8: checkBox8.checked,
+        Station11: checkBox11.checked,
+        Station22: checkBox22.checked,
+        Station33: checkBox33.checked,
+        Station44: checkBox44.checked,
+        Station55: checkBox55.checked,
+        Station66: checkBox66.checked,
+        Station77: checkBox77.checked,
+        Station88: checkBox88.checked
+
+
+        }
+
+var path = 'Update/';
+httpPost(path,data,'json',dataPosted,postErr);
+
+    function postErr(data) {
+      //console.log(data);
+    }
+
+    function dataPosted(data) {
+      console.log(data);
+     if(data.status == "ok") {
+
+      
+         alert("Update Completed");
+                    
+
+}
+
+
+}
+}
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
